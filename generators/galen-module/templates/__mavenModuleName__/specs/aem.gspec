@@ -1,0 +1,11 @@
+@objects
+    language_navigation .languagenavigation
+    search              .search
+    navigation          .navigation
+
+= The header is fine =
+    @on *
+        search:
+            below language_navigation
+        navigation:
+            below search

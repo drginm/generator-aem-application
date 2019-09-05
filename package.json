@@ -1,0 +1,78 @@
+{
+  "name": "generator-aem-application",
+  "version": "0.0.0",
+  "description": "A generator for AEM applications",
+  "homepage": "github",
+  "author": {
+    "name": "drginm",
+    "email": "",
+    "url": "dlighthouse"
+  },
+  "files": [
+    "generators"
+  ],
+  "main": "generators/index.js",
+  "keywords": [
+    "aem",
+    "generator",
+    "yeoman",
+    "yeoman-generator"
+  ],
+  "devDependencies": {
+    "yeoman-test": "^1.7.0",
+    "yeoman-assert": "^3.1.0",
+    "coveralls": "^3.0.5",
+    "eslint": "^6.0.1",
+    "prettier": "^1.18.2",
+    "husky": "^3.0.1",
+    "lint-staged": "^9.2.0",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-config-xo": "^0.26.0",
+    "jest": "^24.8.0"
+  },
+  "engines": {
+    "npm": ">= 4.0.0"
+  },
+  "dependencies": {
+    "chalk": "^2.1.0",
+    "gulp-pattern-rename": "^0.4.0",
+    "yeoman-generator": "^2.0.1",
+    "yosay": "^2.0.1"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ],
+    "*.json": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "eslintConfig": {
+    "extends": [
+      "xo",
+      "prettier"
+    ],
+    "env": {
+      "jest": true,
+      "node": true
+    },
+    "rules": {
+      "prettier/prettier": "error"
+    },
+    "plugins": [
+      "prettier"
+    ]
+  },
+  "scripts": {
+    "pretest": "eslint .",
+    "test": "jest"
+  },
+  "repository": "drginm/generator-aem-application",
+  "license": "Apache-2.0"
+}

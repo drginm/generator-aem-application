@@ -1,0 +1,16 @@
+'use strict';
+const path = require('path');
+const assert = require('yeoman-assert');
+const helpers = require('yeoman-test');
+
+describe('generator-aem-application:galen-module', () => {
+  beforeAll(() => {
+    return helpers
+      .run(path.join(__dirname, '../generators/galen-module'))
+      .withPrompts({ someAnswer: true });
+  });
+
+  it('creates files', () => {
+    assert.file(['dummyfile.txt']);
+  });
+});

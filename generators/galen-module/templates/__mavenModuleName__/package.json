@@ -1,0 +1,14 @@
+{
+  "name": "<%= artifactId %>-<%= mavenModuleName %>",
+  "private": true,
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "galen": "galen test tests/ --htmlreport reports -DisAuthorInstance=true"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "galenframework-cli": "^2.4.4"
+  }
+}
