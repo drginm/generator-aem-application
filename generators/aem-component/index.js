@@ -9,7 +9,7 @@ module.exports = class extends Generator {
   prompting() {
     // Have Yeoman greet the user.
     this.log(
-      yosay(`Welcome to the sensational ${chalk.red('generator-aem-application')} generator!`)
+      yosay(`Welcome to the sensational ${chalk.red('generator-aem-application:aem-component')} generator!`)
     );
 
     const prompts = [
@@ -52,9 +52,9 @@ module.exports = class extends Generator {
       this.registerTransformStream(patternRename({
         props: this.props,
         meta: {
-          packageName: {
+          componentParentPath: {
             createSubfolders: true,
-            folderSeparator: '.'
+            folderSeparator: '/'
           }
         }
       }));

@@ -4,18 +4,13 @@ const chalk = require('chalk');
 const yosay = require('yosay');
 
 const patternRename = require('gulp-pattern-rename');
+const utilities = require('../../utilities/utilities');
 
 module.exports = class extends Generator {
   prompting() {
-    console.log(this.args);
-
-    this.args.forEach(function (argument) {
-      console.log(argument.split('='));
-    });
-
     // Have Yeoman greet the user.
     this.log(
-      yosay(`Welcome to the awesome ${chalk.red('generator-aem-application')} generator!`)
+      yosay(`Welcome to the awesome ${chalk.red('generator-aem-application:galen-module')} generator!`)
     );
 
     const prompts = [
@@ -45,6 +40,8 @@ module.exports = class extends Generator {
       },
     ];
 
+    utilities.extractArguments(this.args, prompts);
+
     return this.prompt(prompts).then(props => {
       this.props = props;
 
@@ -73,6 +70,6 @@ module.exports = class extends Generator {
   }
 
   install() {
-    this.installDependencies();
+    //this.installDependencies();
   }
 };

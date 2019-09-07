@@ -1,8 +1,8 @@
 {
   "name": "generator-aem-application",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "A generator for AEM applications",
-  "homepage": "github",
+  "homepage": "https://www.dlighthouse.co/",
   "author": {
     "name": "drginm",
     "email": "",

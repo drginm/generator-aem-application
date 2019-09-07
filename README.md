@@ -10,14 +10,14 @@ npm install -g yo
 npm install -g generator-aem-application
 ```
 
-Then generate your new project:
+Supported subgenerators:
 
-Galen
+A Galen Submodule
 ```bash
 yo aem-application:galen-module
 ```
 
-AEM Component
+Simple AEM Component
 ```bash
 yo aem-application:aem-component
 ```
