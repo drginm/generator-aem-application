@@ -10,3 +10,15 @@ module.exports.extractArguments = function(args, prompts) {
     });
   });
 }
+
+module.exports.copyEverything = function(generator) {
+  generator.fs.copyTpl(
+    generator.templatePath('**/**'),
+    generator.destinationPath(), generator.props
+  );
+
+  generator.fs.copyTpl(
+    generator.templatePath('**/.*'),
+    generator.destinationPath(), generator.props
+  );
+}

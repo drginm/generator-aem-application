@@ -1,5 +1,8 @@
 # generator-aem-application [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
-> A generator for AEM applications
+> A set of subgenerators for helping you when working with AEM applications.  Current supported generators will help you create:
+* AEM components 
+* Custom Workflow Step
+* Galen submodule
 
 ## Installation
 
@@ -10,16 +13,38 @@ npm install -g yo
 npm install -g generator-aem-application
 ```
 
-Supported subgenerators:
+## Supported subgenerators:
 
-A Galen Submodule
+All Subgenerators should be executed from the root path of your AEM application
+
+### Simple AEM Component
+```bash
+yo aem-application:aem-component
+```
+
+You can also supply parameters from the console
+```bash
+yo aem-application:aem-component
+```
+
+### Workflow Step
+```bash
+yo aem-application:workflow
+```
+
+You can also supply parameters from the console
+```bash
+yo aem-application:workflow workflowName="Sample Application - Sample Workflow Process Step" mavenAppsModuleName=ui.apps componentParentPath=workflow-step-dialog/components/workflow componentNodeName=workflow-process  mavenBundleModuleName=core javaRootPackageName=co.dlighthouse.aem.workflowstepdialog.core javaWorkflowRelativePackageName=workflows javaWorkflowClassName=SampleWorkflowProcess
+```
+
+### A Galen Submodule
 ```bash
 yo aem-application:galen-module
 ```
 
-Simple AEM Component
+You can also supply parameters from the console
 ```bash
-yo aem-application:aem-component
+yo aem-application:galen-module
 ```
 
 ## Getting To Know Yeoman
