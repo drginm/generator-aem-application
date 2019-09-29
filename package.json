@@ -1,12 +1,12 @@
 {
   "name": "generator-aem-application",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "A set of subgenerators for helping you when working with AEM applications, current supported subgenerators will help you create AEM components, custom workflow steps and a galen submodule",
   "homepage": "https://www.dlighthouse.co/",
   "author": {
     "name": "drginm",
     "email": "",
-    "url": "dlighthouse"
+    "url": "dlighthouse.co"
   },
   "files": [
     "generators"

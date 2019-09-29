@@ -1,0 +1,20 @@
+<div>
+  <h3>Component <%= componentName %></h3>
+
+  <sly data-sly-use.model="<%= javaRootPackageName %>.<%= javaModelRelativePackageName %>.<%= javaModelClassName %>"/>
+
+  <ul>
+<% if(fields.includes('includeTextFieldExample')) { -%>
+    <li>Text: ${model.text}</li>
+<% } -%>
+<% if(fields.includes('includeCheckboxExample')) { -%>
+    <li>Checkbox: ${model.checkbox ? "Checked!" : "Not Checked!"} </li>
+<% } -%>
+<% if(fields.includes('includePathfieldExample')) { -%>
+    <li>Url: ${model.url}</li>
+<% } -%>
+<% if(fields.includes('includeDropDownExample')) { -%>
+    <li>Select: ${model.select}</li>
+<% } -%>
+  </ul>
+</div>
