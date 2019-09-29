@@ -1,6 +1,7 @@
 # generator-aem-application [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
 > A set of subgenerators for helping you when working with AEM applications.  Current supported generators will help you create:
 * AEM components
+* Clientlibs
 * Custom Workflow Step
 * Galen submodule
 
@@ -25,6 +26,16 @@ yo aem-application:aem-component
 You can also supply parameters from the console
 ```bash
 yo aem-application:aem-component mavenAppsModuleNamemavenAppsModuleName=ui.apps componentParentPath=basic-component/components/content componentNodeName=basic-component componentName="Basic Component" componentGroup="Basic Component" mavenBundleModuleName=core javaRootPackageName=co.dlighthouse.aem.basiccomponent.core javaModelRelativePackageName=models javaModelClassName=BasicModel
+```
+
+### Clientlibs
+```bash
+yo aem-application:clientlibs
+```
+
+You can also supply parameters from the console
+```bash
+yo aem-application:clientlibs clientlibsPath=ui.apps/src/main/content/jcr_root/apps/basic-component/clientlibs/clientlib-example categories=clientlib-example
 ```
 
 ### Workflow Step
