@@ -73,13 +73,33 @@ module.exports = class extends Generator {
           },
           new inquirer.Separator(' = More = '),
           {
+            name: 'Select/Drop Down/Combo Box',
+            value: 'includeDropDownExample',
+            checked: false
+          },
+          {
             name: 'Path Field',
             value: 'includePathfieldExample',
             checked: false
           },
           {
-            name: 'Select/Drop Down/Combo Box',
-            value: 'includeDropDownExample',
+            name: 'Text Area',
+            value: 'includeTextAreaExample',
+            checked: false
+          },
+          {
+            name: 'Image',
+            value: 'includeImageFieldExample',
+            checked: false
+          },
+          {
+            name: 'Fieldset',
+            value: 'includeFieldsetExample',
+            checked: false
+          },
+          {
+            name: 'Use Tabs',
+            value: 'includeTabsExample',
             checked: false
           },
         ]
@@ -139,7 +159,7 @@ module.exports = class extends Generator {
         },
         type: 'input',
         name: 'javaModelClassName',
-        message: 'What\'s the name for the Workflow process class',
+        message: 'What\'s the name for the Model class',
         default: 'SampleModel'
       },
     ];

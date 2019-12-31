@@ -14,8 +14,12 @@ public class <%= javaModelClassName %> {
     @ValueMapValue(injectionStrategy=InjectionStrategy.OPTIONAL)
     protected String text;
 <% } -%>
+<% if(fields.includes('includeTextAreaExample')) { -%>
+    @ValueMapValue(injectionStrategy=InjectionStrategy.OPTIONAL)
+    protected String longText;
+<% } -%>
 <% if(fields.includes('includeCheckboxExample')) { -%>
-    @ValueMapValue()
+    @ValueMapValue(injectionStrategy=InjectionStrategy.OPTIONAL)
     protected Boolean checkbox;
 <% } -%>
 <% if(fields.includes('includePathfieldExample')) { -%>
@@ -26,10 +30,19 @@ public class <%= javaModelClassName %> {
     @ValueMapValue(injectionStrategy=InjectionStrategy.OPTIONAL)
     protected String select;
 <% } -%>
+<% if(fields.includes('includeImageFieldExample')) { -%>
+    @ValueMapValue(injectionStrategy=InjectionStrategy.OPTIONAL)
+    protected String fileReference;
+<% } -%>
 
 <% if(fields.includes('includeTextFieldExample')) { -%>
     public String getText() {
         return text;
+    }
+<% } -%>
+<% if(fields.includes('includeTextAreaExample')) { -%>
+    public String getLongText() {
+        return longText;
     }
 <% } -%>
 <% if(fields.includes('includeCheckboxExample')) { -%>
@@ -45,6 +58,11 @@ public class <%= javaModelClassName %> {
 <% if(fields.includes('includeDropDownExample')) { -%>
     public String getSelect() {
         return select;
+    }
+<% } -%>
+<% if(fields.includes('includeImageFieldExample')) { -%>
+    public String getFileReference() {
+        return fileReference;
     }
 <% } -%>
 }

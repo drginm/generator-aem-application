@@ -1,12 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0"
     jcr:primaryType="nt:unstructured"
     jcr:title="Properties"
     sling:resourceType="cq/gui/components/authoring/dialog">
     <content
         jcr:primaryType="nt:unstructured"
+<% if(fields.includes('includeTabsExample')) { -%>
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+<% } else { -%>
         sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+<% } -%>
         <items jcr:primaryType="nt:unstructured">
+<% if(fields.includes('includeTabsExample')) { -%>
+            <tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                maximized="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">
+                    <firstTab
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="List Settings"
+                        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+<% } -%>
             <column
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="granite/ui/components/coral/foundation/container">
@@ -17,6 +34,15 @@
                         sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
                         fieldLabel="Text"
                         name="./text"/>
+<% } -%>
+<% if(fields.includes('includeTextAreaExample')) { -%>
+                    <longText
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                        fieldLabel="Long Text"
+                        name="./longText"
+                        rows="10"
+                        resize="vertical"/>
 <% } -%>
 <% if(fields.includes('includeCheckboxExample')) { -%>
                     <checkbox
@@ -63,8 +89,60 @@
                         </items>
                     </select>
 <% } -%>
+<% if(fields.includes('includeImageFieldExample')) { -%>
+                    <image
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                        autoStart="{Boolean}false"
+                        class="cq-droptarget"
+                        fileNameParameter="./fileName"
+                        fileReferenceParameter="./fileReference"
+                        mimeTypes="[image/gif,image/jpeg,image/png,image/tiff,image/svg+xml]"
+                        multiple="{Boolean}false"
+                        name="./file"
+                        title="Upload Image Asset"
+                        uploadUrl="${suffix.path}"
+                        useHTML5="{Boolean}true"/>
+<% } -%>
+<% if(fields.includes('includeFieldsetExample')) { -%>
+                    <fieldset
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/fieldset"
+                        jcr:title="Related Fields">
+                        <items jcr:primaryType="nt:unstructured">
+                            <text
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/text"
+                                text="Grouped fields here!" />
+                        </items>
+                    </fieldset>
+<% } -%>
                 </items>
             </column>
+<% if(fields.includes('includeTabsExample')) { -%>
+                        </items>
+                    </firstTab>
+                    <secondTab
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Second Tab"
+                        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <text
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/text"
+                                        text="Second tab fields here!" />
+                                </items>
+                            </column>
+                        </items>
+                    </secondTab>
+                </items>
+            </tabs>
+<% } -%>
         </items>
     </content>
 </jcr:root>

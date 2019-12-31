@@ -7,6 +7,9 @@
 <% if(fields.includes('includeTextFieldExample')) { -%>
     <li>Text: ${model.text}</li>
 <% } -%>
+<% if(fields.includes('includeTextAreaExample')) { -%>
+    <li>Long Text: ${model.longText}</li>
+<% } -%>
 <% if(fields.includes('includeCheckboxExample')) { -%>
     <li>Checkbox: ${model.checkbox ? "Checked!" : "Not Checked!"} </li>
 <% } -%>
@@ -15,6 +18,9 @@
 <% } -%>
 <% if(fields.includes('includeDropDownExample')) { -%>
     <li>Select: ${model.select}</li>
+<% } -%>
+<% if(fields.includes('includeImageFieldExample')) { -%>
+    <li>Image: <img src="${model.fileReference}" alt=""></li>
 <% } -%>
   </ul>
 </div>
