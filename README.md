@@ -25,7 +25,7 @@ yo aem-application:aem-component
 
 You can also supply parameters from the console
 ```bash
-yo aem-application:aem-component mavenAppsModuleNamemavenAppsModuleName=ui.apps componentParentPath=basic-component/components/content componentNodeName=basic-component componentName="Basic Component" componentGroup="Basic Component" mavenBundleModuleName=core javaRootPackageName=co.dlighthouse.aem.basiccomponent.core javaModelRelativePackageName=models javaModelClassName=BasicModel
+yo aem-application:aem-component mavenAppsModuleName=ui.apps componentParentPath=basic-component/components/content componentNodeName=basic-component componentName="Basic Component" componentGroup="Basic Component" mavenBundleModuleName=core javaRootPackageName=co.dlighthouse.aem.basiccomponent.core javaModelRelativePackageName=models javaModelClassName=BasicModel
 ```
 
 ### Clientlibs

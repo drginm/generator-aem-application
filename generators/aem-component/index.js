@@ -6,7 +6,7 @@ const yosay = require('yosay');
 const inquirer = require('inquirer');
 
 const patternRename = require('gulp-pattern-rename');
-const utilities = require('../../utilities/utilities');
+const utilities = require('../utilities/utilities');
 
 module.exports = class extends Generator {
   prompting() {
