@@ -48,10 +48,26 @@ module.exports = class extends Generator {
         default: 'Components'
       },
       {
+        type: 'list',
+        name: 'useSlingModelExporter',
+        message: 'Use the Sling Model Exporter?',
+        default: false,
+        choices: [
+          {
+            name: 'Yes',
+            value: true
+          },
+          {
+            name: 'No',
+            value: false
+          }
+        ]
+      },
+      {
         type: 'confirm',
         name: 'shouldIncludeFieldExamples',
         message: 'Should I include field examples',
-        default: true
+        default: false
       },
       {
         when: function(answers) {
